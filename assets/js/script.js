@@ -13,6 +13,20 @@ menu_toggle.addEventListener("click", function () {
   }
 });
 
+
+var list = document.querySelectorAll('#sidebar .nav-sidebar .item');
+for(let i=0;i<list.length;i++) {
+    list[i].onclick = function() {
+        let j= 0;
+        while(j<list.length) {
+            list[j++].className ='item';
+        }
+        list[i].className ='item active';
+    }
+}
+
+
+
 var profile = document.querySelector(".profile");
 var show_profile = document.querySelector(".show-profile ");
 profile.addEventListener("click", function () {

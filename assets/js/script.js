@@ -13,19 +13,16 @@ menu_toggle.addEventListener("click", function () {
   }
 });
 
-
-var list = document.querySelectorAll('#sidebar .nav-sidebar .item');
-for(let i=0;i<list.length;i++) {
-    list[i].onclick = function() {
-        let j= 0;
-        while(j<list.length) {
-            list[j++].className ='item';
-        }
-        list[i].className ='item active';
+var list = document.querySelectorAll("#sidebar .nav-sidebar .item");
+for (let i = 0; i < list.length; i++) {
+  list[i].onclick = function () {
+    let j = 0;
+    while (j < list.length) {
+      list[j++].className = "item";
     }
+    list[i].className = "item active";
+  };
 }
-
-
 
 var profile = document.querySelector(".profile");
 var show_profile = document.querySelector(".show-profile ");
@@ -72,3 +69,25 @@ window.addEventListener("scroll", () => {
     toTop.classList.remove("active");
   }
 });
+
+
+// profile
+var btn_pro = document.querySelectorAll(".sestion-profile .card-detail  .card-detail__tabs li button");
+var pro_li  = document.querySelectorAll(".sestion-profile .card-detail  .card-detail__tabs li ");
+var pro_main  = document.querySelectorAll(".sestion-profile .card-detail  .content .content__main");
+console.log(pro_main)
+for (let j = 0; j < btn_pro.length; j++) {
+  btn_pro[j].addEventListener("click", function () {
+    let s = 0;
+    while (s < pro_li.length) {
+      btn_pro[s].className = ""
+      pro_li[s].className = "";
+      pro_main[s].className = "content__main";
+      s++; 
+    }
+    pro_li[j].classList.add("active");
+    btn_pro[j].classList.add("color");
+    pro_main[j].classList.add("show");
+ 
+  });
+}
